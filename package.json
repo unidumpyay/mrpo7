@@ -6,7 +6,7 @@
   "dependencies": {
     "node-fetch": "^2.6.12",
     "marked": "^6.0.0",
-    "@actions/core": "^1.12.0",
-    "@actions/github": "^5.1.1"
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.0.0"
   }
 }
