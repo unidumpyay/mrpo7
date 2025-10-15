@@ -2,9 +2,11 @@
   "name": "bookstack-sync",
   "version": "1.0.0",
   "description": "Sync GitHub Issues to BookStack",
-  "main": "bookstack-sync.js",
+  "main": "scripts/bookstack-sync.js",
   "dependencies": {
     "node-fetch": "^2.6.12",
-    "marked": "^6.0.0"
+    "marked": "^6.0.0",
+    "@actions/core": "^1.12.0",
+    "@actions/github": "^5.1.1"
   }
 }
