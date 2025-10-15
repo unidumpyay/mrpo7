@@ -5,13 +5,23 @@ on:
     types: [opened, edited, closed]
 
 jobs:
-  bookstack:
+  sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Sync Issue to BookStack
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run BookStack sync
         run: node ./scripts/bookstack-sync.js
         env:
           BOOKSTACK_API_URL: ${{ secrets.BOOKSTACK_API_URL }}
           BOOKSTACK_TOKEN_ID: ${{ secrets.BOOKSTACK_TOKEN_ID }}
           BOOKSTACK_TOKEN_SECRET: ${{ secrets.BOOKSTACK_TOKEN_SECRET }}
+          BOOK_ID: 1
